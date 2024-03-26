@@ -11,9 +11,14 @@ vspJump = -20; //jump speed
 canJump = 0; //above zero while we are able to jump
 jumpsMax = 1;
 
+canDash = 0;
+dashMax = 1;
+
 dashSpeed = 15;
 dashDuration = 0;
+nextDashDuration = 0;
 
 onGround = false; //are we on the ground?
 
 health = 100;
+mana = 10;

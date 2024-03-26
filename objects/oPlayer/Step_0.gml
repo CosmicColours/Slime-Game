@@ -15,6 +15,7 @@ sprite_index = sPlayer;
 
 //
 dashDuration = max(dashDuration - 1, 0);
+nextDashDuration = max(nextDashDuration - 1, 0);
 
  
 //Work out where to move horizontally
@@ -24,14 +25,17 @@ hsp = (key_right - key_left) * hspWalk;
 vsp = vsp + grv;
  
 //Work out if we should jump
-if (canJump-- > 0) && (key_jump)
+
+
+ 
+#region new collission 
+ /*
+ if (canJump-- > 0) && (key_jump)
 {
     vsp = vspJump;
     canJump--;
 }
- 
-#region new collission 
- /*
+
 //Are we on the ground?
 onGround = place_meeting(x,y+1,oWall);
  
@@ -86,17 +90,26 @@ if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
 
 #region key checks
 
-if (key_dash) {
+if (key_dash) && (canDash > 0) && (nextDashDuration <= 0) {
 
 	dashDuration = 15;
+	nextDashDuration = 45;
+	
 	hsp = image_xscale * dashSpeed;
+	
+	canDash--;
 
 }
 
 if (dashDuration > 0) {
 	sprite_index = sPlayerGlide;
-		hsp = image_xscale * dashSpeed;
+	
+	hsp = image_xscale * dashSpeed;
 	vsp = 0;
+} else { 
+	
+	canDash = dashMax;
+
 }
 
 
@@ -145,10 +158,11 @@ if(key_jump) && (jumps > 0) && (!key_glide){
 if(place_meeting(x,y+1,oWall)) || (place_meeting(x,y+1,oWater)){
 	
 	jumps = jumpsMax;
-
+	
 }
 
 #endregion
+
 
 
 #region collission
@@ -161,6 +175,7 @@ if (place_meeting(x,y, oWater)) {
 	
 
 }
+
 
 if(place_meeting(x+hsp, y, oWall)) {
 
@@ -176,8 +191,9 @@ if(place_meeting(x+hsp, y, oWall)) {
 }
 
 
-
 x = x + hsp;
+
+
 
 
 if(place_meeting(x, y+vsp, oWall)) {
