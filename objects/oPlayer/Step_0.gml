@@ -1,14 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
 var key_right = keyboard_check(vk_right);
+//var key_up = keyboard_check(vk_up);
 var key_left = keyboard_check(vk_left);
 var key_down = keyboard_check(vk_down);
+
 var key_jump = keyboard_check_pressed(ord("S"));
 var key_glide = keyboard_check(ord("D"));
+var key_dash = keyboard_check_pressed(ord("A"));
  
-slopeOn = keyboard_check(vk_control);
+//slopeOn = keyboard_check(vk_control);
 
 sprite_index = sPlayer;
+
+//
+dashDuration = max(dashDuration - 1, 0);
+
  
 //Work out where to move horizontally
 hsp = (key_right - key_left) * hspWalk;
@@ -74,16 +81,29 @@ if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
 #endregion
 
 
-
 #region old code
 
 
 #region key checks
 
+if (key_dash) {
 
-if (key_glide) {
+	dashDuration = 15;
+	hsp = image_xscale * dashSpeed;
 
-	grv = 0.2;
+}
+
+if (dashDuration > 0) {
+	sprite_index = sPlayerGlide;
+		hsp = image_xscale * dashSpeed;
+	vsp = 0;
+}
+
+
+if (key_glide) && (!place_meeting(x,y+1,oWall)) {
+
+	grv = 0.15;
+	hspWalk = 7;
 
 	sprite_index = sPlayerGlide;
 	
@@ -91,13 +111,16 @@ if (key_glide) {
 
 } else {
 
-	grv = 0.9;
+	hspWalk = 6;
+	grv = 0.7;
 }
+
 
 if (key_down) {
 
-sprite_index = sPlayerGlide;
+	sprite_index = sPlayerGlide;
 }
+
 
 if(key_left) {
 
@@ -109,7 +132,8 @@ if(key_right) {
 	image_xscale = 1;
 }
 
-if(key_jump) && (jumps > 0){
+
+if(key_jump) && (jumps > 0) && (!key_glide){
 	
 		vsp = -12;
 
@@ -152,6 +176,7 @@ if(place_meeting(x+hsp, y, oWall)) {
 }
 
 
+
 x = x + hsp;
 
 
@@ -169,6 +194,8 @@ if(place_meeting(x, y+vsp, oWall)) {
 
 
 y = y + vsp;
+
+
 
 
 #endregion
