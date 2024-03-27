@@ -1,13 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 var key_right = keyboard_check(vk_right);
-//var key_up = keyboard_check(vk_up);
 var key_left = keyboard_check(vk_left);
 var key_down = keyboard_check(vk_down);
 
-var key_jump = keyboard_check_pressed(ord("S"));
-var key_glide = keyboard_check(ord("D"));
+var key_jump = keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_up);
+var key_glide = keyboard_check(ord("W"));
 var key_dash = keyboard_check_pressed(ord("A"));
+
+var key_melee = keyboard_check(ord("D"));
+var key_range = keyboard_check_pressed(ord("E"));
  
 //slopeOn = keyboard_check(vk_control);
 
@@ -16,6 +18,7 @@ sprite_index = sPlayer;
 //
 dashDuration = max(dashDuration - 1, 0);
 nextDashDuration = max(nextDashDuration - 1, 0);
+firingDelay = max(firingDelay - 1, 0);
 
  
 //Work out where to move horizontally
@@ -26,9 +29,7 @@ vsp = vsp + grv;
  
 //Work out if we should jump
 
-
- 
-#region new collission 
+#region text code abandoned
  /*
  if (canJump-- > 0) && (key_jump)
 {
@@ -88,7 +89,27 @@ if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
 #region old code
 
 
-#region key checks
+	#region key checks
+	
+
+if (key_range) && (firingDelay <= 0) {
+	
+	firingDelay = 30;
+
+	with (instance_create_layer(x,y, "Bullets", oBullet)){
+		speed = 10;
+
+		if (other.image_xscale >= 1) {
+			direction = 1;
+		
+		} else {
+			direction = -180;
+			
+		}
+	
+	}
+
+}
 
 if (key_dash) && (canDash > 0) && (nextDashDuration <= 0) {
 
@@ -165,7 +186,7 @@ if(place_meeting(x,y+1,oWall)) || (place_meeting(x,y+1,oWater)){
 
 
 
-#region collission
+	#region collission
 
 if (place_meeting(x,y, oWater)) {
 
@@ -217,7 +238,8 @@ y = y + vsp;
 #endregion
 
 
-#region outofscreen
+
+	#region outofscreen
 
 
 if (y >= room_height) || (health <= 0) {

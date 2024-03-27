@@ -8,7 +8,8 @@ hspWalk = 6; //walk speed
 vspJump = -20; //jump speed
 
 
-canJump = 0; //above zero while we are able to jump
+//canJump = 0; //above zero while we are able to jump
+jumps = 0;
 jumpsMax = 1;
 
 canDash = 0;
@@ -18,7 +19,11 @@ dashSpeed = 15;
 dashDuration = 0;
 nextDashDuration = 0;
 
+
+firingDelay = 0;
+
 onGround = false; //are we on the ground?
+
 
 health = 100;
 mana = 10;
