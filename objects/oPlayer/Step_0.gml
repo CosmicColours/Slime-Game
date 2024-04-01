@@ -22,6 +22,8 @@ dashDuration = max(dashDuration - 1, 0);
 nextDashDuration = max(nextDashDuration - 1, 0);
 firingDelay = max(firingDelay - 1, 0);
 
+iFrames = max(iFrames - 1, 0);
+
  
 //Work out where to move horizontally
 hsp = (key_right - key_left) * hspWalk;
@@ -256,11 +258,6 @@ if(place_meeting(x+hsp, y, oWall)) {
 }
 
 
-x = x + hsp;
-
-
-
-
 if(place_meeting(x, y+vsp, oWall)) {
 
 	while(!place_meeting(x,y+sign(vsp),oWall)) {
@@ -272,6 +269,8 @@ if(place_meeting(x, y+vsp, oWall)) {
 	vsp = 0;
 
 }
+
+x = x + hsp;
 
 
 y = y + vsp;
@@ -286,7 +285,7 @@ y = y + vsp;
 	#region outofscreen
 
 
-if (y >= room_height) || (health <= 0) {
+if (y >= room_height) || (hp <= 0) {
 	
 	game_end();
 

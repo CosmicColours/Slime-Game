@@ -14,18 +14,20 @@ vspJump = -17; //jump speed
 jumps = 0;
 jumpsMax = 1;
 
-canDash = 0;
+canDash = 1;
 dashMax = 1;
 
 dashSpeed = 20;
 dashDuration = 0;
 nextDashDuration = 0;
 
-
 firingDelay = 0;
 
 onGround = false; //are we on the ground?
 
+flash = 0;
+iFrames = 0;
 
-health = 100;
+
+hp = 10;
 mana = 10;
