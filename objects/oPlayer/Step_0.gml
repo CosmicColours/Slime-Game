@@ -8,7 +8,9 @@ var key_jump = keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_up)
 var key_glide = keyboard_check(ord("W"));
 var key_dash = keyboard_check_pressed(ord("A"));
 
-var key_melee = keyboard_check(ord("D"));
+var key_strafe = keyboard_check(ord("Q"));
+
+var key_melee = keyboard_check_pressed(ord("D"));
 var key_range = keyboard_check_pressed(ord("E"));
  
 //slopeOn = keyboard_check(vk_control);
@@ -86,13 +88,31 @@ if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
 #endregion
 
 
-#region old code
-
 
 	#region key checks
 	
+if (state == "move") {
+	
+	if(key_left) && (!key_strafe) {
 
-if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
+	image_xscale = -1;
+	
+	}
+
+	if(key_right) && (!key_strafe) {
+		image_xscale = 1;
+	}
+	
+	
+	if(key_jump) && (jumps > 0) && (!key_glide){
+	
+			vsp = vspJump;
+
+			jumps--;
+
+	}
+	
+	if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
 	
 	firingDelay = 30;
 
@@ -105,32 +125,81 @@ if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
 		} else {
 			direction = -180;
 			
+			}
+
 		}
+		
+	}
 	
+
+	
+	if(key_down) {
+		image_index = 0;
+		state = "puddle";
+	}
+	
+		
+	if(key_dash) {
+		state = "dash";
+	}
+	
+		
+	if(key_melee) {
+		image_index = 0;
+		state = "melee";
 	}
 
-}
-
-if (key_dash) && (canDash > 0) && (nextDashDuration <= 0) {
-
-	dashDuration = 15;
-	nextDashDuration = 45;
-	
-	hsp = image_xscale * dashSpeed;
-	
-	canDash--;
 
 }
 
-if (dashDuration > 0) {
-	sprite_index = sPlayerGlide;
-	
-	hsp = image_xscale * dashSpeed;
-	vsp = 0;
-} else { 
-	
-	canDash = dashMax;
 
+if (state == "dash"){
+	if (canDash > 0) && (nextDashDuration <= 0) {
+
+		dashDuration = 25;
+		nextDashDuration = 70;
+	
+		hsp = image_xscale * dashSpeed;
+	
+		canDash--;
+
+	}
+
+	if (dashDuration > 0) {
+		sprite_index = sPlayerGlide;
+	
+		hsp = image_xscale * dashSpeed;
+		vsp = 0;
+	} else { 
+	
+		canDash = dashMax;
+		state = "move"
+	}
+	
+}
+
+
+if (state == "melee"){
+	sprite_index = sPlayerMelee;
+}
+
+
+if (state == "puddle") {
+
+	sprite_index = sPlayerPuddle;
+	
+	if (image_index >= 12) {
+		image_speed = 0;
+	}
+	
+	if (keyboard_check_released(vk_down)) {
+		
+		image_speed = 1;
+		state = "move";
+	
+	}
+	
+		
 }
 
 
@@ -145,39 +214,16 @@ if (key_glide) && (!place_meeting(x,y+1,oWall)) {
 
 } else {
 
-	hspWalk = 6;
+	hspWalk = 8;
 	grv = grvOG;
 }
 
-if (key_melee) {
-	image_index = 0;
-	sprite_index = sPlayerMelee;
-}
 
-if (key_down) {
-
-	sprite_index = sPlayerGlide;
-}
+#endregion
 
 
-if(key_left) {
 
-	image_xscale = -1;
-	
-}
-
-if(key_right) {
-	image_xscale = 1;
-}
-
-
-if(key_jump) && (jumps > 0) && (!key_glide){
-	
-		vsp = -12;
-
-		jumps--;
-
-}
+	#region collission
 
 
 if(place_meeting(x,y+1,oWall)) || (place_meeting(x,y+1,oWater)){
@@ -185,12 +231,6 @@ if(place_meeting(x,y+1,oWall)) || (place_meeting(x,y+1,oWater)){
 	jumps = jumpsMax;
 	
 }
-
-#endregion
-
-
-
-	#region collission
 
 if (place_meeting(x,y, oWater)) {
 
@@ -257,4 +297,3 @@ if (y >= room_height) || (health <= 0) {
 
 
 
-#endregion

@@ -1,12 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
+state = "move";
 
-grvOG = 0.5;
-grv = 0.5; //gravity
+grvOG = 0.6;
+grv = 0.6; //gravity
 hsp = 0; //current horizontal speed
 vsp = 0; //current vertical speed
-hspWalk = 60; //walk speed
-vspJump = -500; //jump speed
+hspWalk = 8; //walk speed
+vspJump = -17; //jump speed
 
 
 //canJump = 0; //above zero while we are able to jump
@@ -16,7 +17,7 @@ jumpsMax = 1;
 canDash = 0;
 dashMax = 1;
 
-dashSpeed = 15;
+dashSpeed = 20;
 dashDuration = 0;
 nextDashDuration = 0;
 

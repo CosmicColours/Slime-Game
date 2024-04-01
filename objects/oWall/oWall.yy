@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite38",
-    "path":"sprites/Sprite38/Sprite38.yy",
+    "name":"sCollission",
+    "path":"sprites/sCollission/sCollission.yy",
   },
   "spriteMaskId":null,
   "visible":true,
