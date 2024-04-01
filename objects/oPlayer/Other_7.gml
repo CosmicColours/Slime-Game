@@ -5,3 +5,9 @@ if (state == "melee") {
 
 	state = "move";
 }
+
+if (state == "puddle") {
+	
+	state = "move";
+
+}

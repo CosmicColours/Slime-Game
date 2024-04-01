@@ -15,8 +15,6 @@ var key_range = keyboard_check_pressed(ord("E"));
  
 //slopeOn = keyboard_check(vk_control);
 
-sprite_index = sPlayer;
-
 //
 dashDuration = max(dashDuration - 1, 0);
 nextDashDuration = max(nextDashDuration - 1, 0);
@@ -94,6 +92,7 @@ if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
 	#region key checks
 	
 if (state == "move") {
+	sprite_index = sPlayer;
 	
 	if(key_left) && (!key_strafe) {
 
@@ -108,6 +107,7 @@ if (state == "move") {
 	
 	if(key_jump) && (jumps > 0) && (!key_glide){
 	
+			audio_play_sound(Sn_Jump, 3, false);
 			vsp = vspJump;
 
 			jumps--;
@@ -136,6 +136,7 @@ if (state == "move") {
 
 	
 	if(key_down) {
+		audio_play_sound(Sn_Stretch, 3, false);
 		image_index = 0;
 		state = "puddle";
 	}
@@ -147,6 +148,7 @@ if (state == "move") {
 	
 		
 	if(key_melee) {
+		audio_play_sound(Sn_Punch, 3, false);
 		image_index = 0;
 		state = "melee";
 	}
@@ -161,6 +163,7 @@ if (state == "dash"){
 		dashDuration = 25;
 		nextDashDuration = 70;
 	
+		audio_play_sound(Sn_Dash, 3, false);
 		hsp = image_xscale * dashSpeed;
 	
 		canDash--;
@@ -182,6 +185,7 @@ if (state == "dash"){
 
 
 if (state == "melee"){
+
 	sprite_index = sPlayerMelee;
 }
 
@@ -189,15 +193,12 @@ if (state == "melee"){
 if (state == "puddle") {
 
 	sprite_index = sPlayerPuddle;
-	
-	if (image_index >= 12) {
+
+	if (image_index >= 12) && (key_down) {
 		image_speed = 0;
-	}
-	
-	if (keyboard_check_released(vk_down)) {
+	} else if (keyboard_check_released(vk_down)) {
 		
 		image_speed = 1;
-		state = "move";
 	
 	}
 	
