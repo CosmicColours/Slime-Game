@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWall",
-    "path":"sprites/sWall/sWall.yy",
+    "name":"Sprite38",
+    "path":"sprites/Sprite38/Sprite38.yy",
   },
   "spriteMaskId":null,
   "visible":true,

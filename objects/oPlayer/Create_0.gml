@@ -1,11 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-grv = 0.7; //gravity
+grvOG = 0.5;
+grv = 0.5; //gravity
 hsp = 0; //current horizontal speed
 vsp = 0; //current vertical speed
-hspWalk = 6; //walk speed
-vspJump = -20; //jump speed
+hspWalk = 60; //walk speed
+vspJump = -500; //jump speed
 
 
 //canJump = 0; //above zero while we are able to jump

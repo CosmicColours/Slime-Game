@@ -92,7 +92,7 @@ if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
 	#region key checks
 	
 
-if (key_range) && (firingDelay <= 0) {
+if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
 	
 	firingDelay = 30;
 
@@ -146,9 +146,13 @@ if (key_glide) && (!place_meeting(x,y+1,oWall)) {
 } else {
 
 	hspWalk = 6;
-	grv = 0.7;
+	grv = grvOG;
 }
 
+if (key_melee) {
+	image_index = 0;
+	sprite_index = sPlayerMelee;
+}
 
 if (key_down) {
 

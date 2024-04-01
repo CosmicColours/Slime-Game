@@ -9,3 +9,5 @@ vsp = 0; //current vertical speed
 hspWalk = 4; //walk speed
 vspJump = -20; //jump speed
 
+health = 5;
+
