@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 state = "move";
+hitByAttack = ds_list_create();
 
 grvOG = 0.6;
 grv = 0.6; //gravity

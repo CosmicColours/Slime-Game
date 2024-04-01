@@ -96,7 +96,7 @@ if (state == "move") {
 	
 	if(key_left) && (!key_strafe) {
 
-	image_xscale = -1;
+		image_xscale = -1;
 	
 	}
 
@@ -185,8 +185,40 @@ if (state == "dash"){
 
 
 if (state == "melee"){
-
 	sprite_index = sPlayerMelee;
+	
+	ds_list_clear(hitByAttack);
+	
+	mask_index = sPlayerMeleeHB;
+	var hitByAttackNow = ds_list_create();
+	var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
+	
+	if (hits > 0) {
+		for (var i = 0; i < hits; i++) {
+			
+			var hitID = hitByAttackNow[| i]; //ds_list_find_value(hitByAttackNow, i);
+			
+			if (ds_list_find_index(hitByAttack, hitID) == -1) {
+				
+				ds_list_add(hitByAttack, hitID);
+			
+				with (hitID) {
+					if (iFramesE <= 0) {
+						audio_play_sound(Sn_Slash, 5, false);
+						
+						iFramesE = 15;
+						hp--;
+						flash = 3;
+					}
+				}
+			}
+		
+		}
+	
+	}
+	
+	ds_list_destroy(hitByAttackNow);
+	mask_index = sPlayer;
 }
 
 
@@ -205,7 +237,7 @@ if (state == "puddle") {
 		
 }
 
-
+/*
 if (key_glide) && (!place_meeting(x,y+1,oWall)) {
 
 	grv = 0.15;
@@ -220,6 +252,7 @@ if (key_glide) && (!place_meeting(x,y+1,oWall)) {
 	hspWalk = 8;
 	grv = grvOG;
 }
+*/
 
 
 #endregion

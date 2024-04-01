@@ -4,6 +4,8 @@
 vsp = vsp + grv;
 sprite_index = sEnemyTest;
 
+iFramesE = max(iFramesE - 1, 0);
+
 #region collission
 
 

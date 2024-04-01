@@ -3,11 +3,13 @@
 
 if (state != "dash") {
 	if (iFrames <= 0 ) {
+		
+		audio_play_sound(Sn_Slash, 5, false);
+		
 		hp--;
 		flash = 3;
-	
 
-		hspWalk = -80;
+		x -= 80;
 		y -= 40;
 	
 		iFrames = 15;

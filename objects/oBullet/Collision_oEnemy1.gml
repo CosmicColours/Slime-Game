@@ -3,6 +3,8 @@
 
 with (other) {
 
+	audio_play_sound(Sn_Slash, 5, false);
+
 	hp--;
 	flash = 3;
 
