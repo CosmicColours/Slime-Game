@@ -11,3 +11,8 @@ if (state == "puddle") {
 	state = "move";
 
 }
+
+if (state == "jump") {
+	state = "move";
+	
+}

@@ -105,12 +105,8 @@ if (state == "move") {
 	}
 	
 	
-	if(key_jump) && (jumps > 0) && (!key_glide){
-	
-			audio_play_sound(Sn_Jump, 3, false);
-			vsp = vspJump;
-
-			jumps--;
+	if(key_jump){
+		state = "jump";
 
 	}
 	
@@ -156,6 +152,19 @@ if (state == "move") {
 
 }
 
+if (state == "jump") {
+
+	if (jumps > 0) && (key_jump){
+	image_index = 0;
+	sprite_index = Slime_Jump_Test;
+	audio_play_sound(Sn_Jump, 3, false);
+			
+	vsp = vspJump;
+
+	jumps--;
+	}
+
+}
 
 if (state == "dash"){
 	if (canDash > 0) && (nextDashDuration <= 0) {
