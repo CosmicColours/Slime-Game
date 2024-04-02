@@ -171,7 +171,7 @@ switch (state)
 		}
 
 		if (dashDuration > 0) {
-			//sprite_index = sPlayerGlide;
+			sprite_index = sPlayerGlide;
 	
 			hsp = image_xscale * dashSpeed;
 			vsp = 0;

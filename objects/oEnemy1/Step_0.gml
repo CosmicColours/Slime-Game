@@ -9,7 +9,7 @@ knockbackDuration = max(knockbackDuration - 1, 0);
 	if (knockbackDuration > 0){
 		state = "knockback";
 	}
-	else if (point_distance(oPlayer.x, oPlayer.y, x, y) < 600) {
+	else if (point_distance(oPlayer.x, oPlayer.y, x, y) < 500) {
 		image_speed = 1;
 		state = "moving";
 		
@@ -88,7 +88,7 @@ switch (state)
 
 				}
 		
-				countdown = random_range(50, 200);
+				countdown = random_range(100, 200);
 			}
 	
 		}

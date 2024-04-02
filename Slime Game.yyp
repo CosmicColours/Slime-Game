@@ -92,6 +92,7 @@
     {"id":{"name":"sPit_01","path":"sprites/sPit_01/sPit_01.yy",},},
     {"id":{"name":"sPlayer_1","path":"sprites/sPlayer_1/sPlayer_1.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
+    {"id":{"name":"Old","path":"sprites/Old/Old.yy",},},
     {"id":{"name":"sPlayerGlide","path":"sprites/sPlayerGlide/sPlayerGlide.yy",},},
     {"id":{"name":"sPlayerHurt","path":"sprites/sPlayerHurt/sPlayerHurt.yy",},},
     {"id":{"name":"sPlayerMelee","path":"sprites/sPlayerMelee/sPlayerMelee.yy",},},

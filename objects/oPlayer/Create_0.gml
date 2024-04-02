@@ -8,7 +8,7 @@ grv = 0.6; //gravity
 hsp = 0; //current horizontal speed
 vsp = 0; //current vertical speed
 hspWalk = 8; //walk speed
-vspJump = -17; //jump speed
+vspJump = -20; //jump speed
 
 
 //canJump = 0; //above zero while we are able to jump
