@@ -100,6 +100,7 @@ switch (state)
 		
 		if(key_melee) {
 			image_index = 0;
+			audio_play_sound(Sn_Punch, 3, false);
 			state = "melee";
 		}
 		

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Slime_Bullet",
-    "path":"sprites/Slime_Bullet/Slime_Bullet.yy",
+    "name":"Acorn_Spinning_",
+    "path":"sprites/Acorn_Spinning_/Acorn_Spinning_.yy",
   },
   "spriteMaskId":null,
   "visible":true,
