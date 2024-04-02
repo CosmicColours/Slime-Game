@@ -27,7 +27,7 @@ switch (state)
 	case "moving":
 	#region in sight
 	
-	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 600) {
+	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 500) {
 		sprite_index = SquirrelMoving;
 		
 		if (instance_exists(oPlayer)) {
@@ -62,12 +62,12 @@ switch (state)
 				
 				if (oPlayer.x > x) {
 
-					//hsp = 1;
+					hsp = 0;
 					image_xscale = -1;
 
 				} else {
 
-					//hsp = -1;
+					hsp = 0;
 					image_xscale = 1;
 				}
 			
