@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"sInstruction_Jump",
   "bboxMode":0,
-  "bbox_bottom":109,
+  "bbox_bottom":76,
   "bbox_left":0,
-  "bbox_right":570,
+  "bbox_right":399,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":110,
+  "height":77,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"61d47a91-f998-492a-b796-01aa46a29479","blendMode":0,"displayName":"default","isLocked":false,"name":"61d47a91-f998-492a-b796-01aa46a29479","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Lvl1BG",
-    "path":"folders/Sprites/Lvl1BG.yy",
+    "name":"Level1BG",
+    "path":"folders/Sprites/Level1BG.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":571,
+  "width":400,
 }
