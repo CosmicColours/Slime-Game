@@ -22,6 +22,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"oBullet","order":6,"path":"objects/oBullet/oBullet.yy",},
+    {"name":"oBulletE","order":8,"path":"objects/oBulletE/oBulletE.yy",},
     {"name":"oCamera","order":2,"path":"objects/oCamera/oCamera.yy",},
     {"name":"oEnemy1","order":5,"path":"objects/oEnemy1/oEnemy1.yy",},
     {"name":"oTransition","order":7,"path":"objects/oTransition/oTransition.yy",},

@@ -13,12 +13,13 @@ if (state == "moving") {
 		audio_play_sound(Sn_Slash, 5, false);
 
 				if (other.x < x) {
-					knockback = -3;
+					knockback = -6;
 				} else {
-					knockback = 3;
+					knockback = 6;
 				}
 							
 				knockbackDuration = 4;
+				state = "knockback";
 				
 		hp--;
 		iFramesE = 20;

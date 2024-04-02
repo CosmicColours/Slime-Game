@@ -210,12 +210,13 @@ switch (state)
 							audio_play_sound(Sn_Slash, 5, false);
 							
 							if (oPlayer.x < x) {
-								knockback = -6;
+								knockback = -10;
 							} else {
-								knockback = 6;
+								knockback = 10;
 							}
 							
 							knockbackDuration = 4;
+							state = "knockback";
 							
 							iFramesE = 12;
 							hp--;
