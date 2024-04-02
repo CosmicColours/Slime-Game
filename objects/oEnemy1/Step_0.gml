@@ -17,7 +17,7 @@ switch (state)
 
 	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 500) {
 			if (instance_exists(oPlayer)) {
-				if (oPlayer.x > x) {
+				 if (oPlayer.x >= x) {
 
 					hsp = 2;
 					image_xscale = -1;
@@ -71,7 +71,7 @@ switch (state)
 
 				}
 		
-				countdown = countDownRate;
+				countdown = random_range(50, 200);
 			}
 	
 		}

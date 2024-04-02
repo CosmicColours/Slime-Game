@@ -8,4 +8,4 @@ if( abs( HSpeed) < Resistance){
 }
 x += HSpeed;
 VSpeed += Gravity;
-y += VSpeed - 15;
+y += VSpeed - randomH;

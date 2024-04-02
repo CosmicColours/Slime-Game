@@ -3,6 +3,8 @@
 
 state = "moving";
 
+randomH = random_range(5, 20);
+
 Speed = 20;
 Gravity = 0.75;
 Resistance = 0.1;

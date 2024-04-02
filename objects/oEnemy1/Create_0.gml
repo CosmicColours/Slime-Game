@@ -9,8 +9,8 @@ hsp = 0; //current horizontal speed
 vsp = 0; //current vertical speed
 
 iFramesE = 0;
-countDownRate = 230;
-countdown = countDownRate;
+
+countdown = random_range(100, 200);
 
 
 vspJump = -20; //jump speed

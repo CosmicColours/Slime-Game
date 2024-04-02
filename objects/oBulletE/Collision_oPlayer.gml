@@ -1,8 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-	
 with (other) {
-
+	
+	if (state != "dash"){
+		
 		if (iFrames <= 0){
 			audio_play_sound(Sn_Slash, 5, false);
 			
@@ -21,9 +22,13 @@ with (other) {
 		flash = 8;
 		
 		}
+	
 		
+	}	
 
 }
 
 instance_destroy();
+
+
 
