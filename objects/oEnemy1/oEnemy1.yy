@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sEnemyTest",
-    "path":"sprites/sEnemyTest/sEnemyTest.yy",
+    "name":"sEnemySq",
+    "path":"sprites/sEnemySq/sEnemySq.yy",
   },
   "spriteMaskId":null,
   "visible":true,

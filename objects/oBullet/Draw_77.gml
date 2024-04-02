@@ -3,6 +3,11 @@
 
 if (place_meeting(x, y, oWall)) || (x >= room_width) or (x <= 0) {
 	
-	instance_destroy();
+	if (state == "moving"){
+		state = "collide";
+		speed = 0;
+		image_index = 0;
+		sprite_index = Slime_Bullet_Impact;
+	}
 
 }

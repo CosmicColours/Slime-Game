@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 vsp = vsp + grv;
-sprite_index = sEnemyTest;
+sprite_index = sEnemySq;
 
 iFramesE = max(iFramesE - 1, 0);
 
@@ -19,7 +19,7 @@ if(place_meeting(x+hsp, y, oWall)) {
 	
 	hsp = 0;
 	
-	sprite_index = sEnemyTest;
+	sprite_index = sEnemySq;
 	
 
 }

@@ -13,5 +13,5 @@ vspJump = -20; //jump speed
 
 flash = 0;
 
-hp = 10;
+hp = 8;
 

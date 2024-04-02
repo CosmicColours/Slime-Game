@@ -8,6 +8,7 @@ if (state == "melee") {
 
 if (state == "puddle") {
 	
+	puddleDuration = 50;
 	state = "move";
 
 }

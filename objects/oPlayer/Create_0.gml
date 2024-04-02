@@ -21,6 +21,7 @@ dashMax = 1;
 dashSpeed = 20;
 dashDuration = 0;
 nextDashDuration = 0;
+puddleDuration = 50;
 
 firingDelay = 0;
 

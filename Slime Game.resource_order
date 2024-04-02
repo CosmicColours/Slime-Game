@@ -48,7 +48,7 @@
     {"name":"sClouds_08","order":18,"path":"sprites/sClouds_08/sClouds_08.yy",},
     {"name":"sCollission","order":11,"path":"sprites/sCollission/sCollission.yy",},
     {"name":"sDungeonLight","order":23,"path":"sprites/sDungeonLight/sDungeonLight.yy",},
-    {"name":"sEnemyTest","order":5,"path":"sprites/sEnemyTest/sEnemyTest.yy",},
+    {"name":"sEnemySq","order":5,"path":"sprites/sEnemySq/sEnemySq.yy",},
     {"name":"sEnemyTestRun","order":6,"path":"sprites/sEnemyTestRun/sEnemyTestRun.yy",},
     {"name":"sFlower_01","order":8,"path":"sprites/sFlower_01/sFlower_01.yy",},
     {"name":"sFlower_02","order":9,"path":"sprites/sFlower_02/sFlower_02.yy",},

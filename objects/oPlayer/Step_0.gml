@@ -28,224 +28,226 @@ hsp = (key_right - key_left) * hspWalk;
  
 //Work out where to move vertically
 vsp = vsp + grv;
- 
-//Work out if we should jump
-
-#region text code abandoned
- /*
- if (canJump-- > 0) && (key_jump)
-{
-    vsp = vspJump;
-    canJump--;
-}
-
-//Are we on the ground?
-onGround = place_meeting(x,y+1,oWall);
- 
- 
-//Horizontal move & collide
-var _hCol = move_and_collide(hsp, 0, oWall, abs(hsp))
-
-if (_keyLeft) {
-	image_xscale = -1;
-
-} else if (_keyRight){
-	image_xscale = 1;
-}
- 
-//Walk down slope
-if (onGround) && (place_meeting(x,y + abs(hsp) + 1 ,oWall)) && (vsp >= 0)
-{   
-    vsp += abs(hsp) + 1;
-}
- 
-//Vertical move & collide
-var _vCol = move_and_collide(0, vsp, oWall, abs(vsp)+1 , hsp, vsp, hsp, vsp)
-
-if (array_length(_vCol)  > 0)
-{
-    if (vsp > 0) canJump = 22;
-    vsp = 0;
-}
-
-
-if (place_meeting(x,y, oWater)) {
-
-	sprite_index = sPlayerHurt;
-	
-
-}
-
-if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
-	
-	game_end();
-
-}
-
-*/
-
-
-#endregion
 
 
 
 	#region key checks
 	
-if (state == "move") {
-	sprite_index = sPlayer;
-	
-	if(key_left) && (!key_strafe) {
+if(key_left) && (!key_strafe) && (state != "dash") {
 
-		image_xscale = -1;
+	image_xscale = -1;
 	
-	}
-
-	if(key_right) && (!key_strafe) {
-		image_xscale = 1;
-	}
+} else if(key_right) && (!key_strafe) && (state != "dash") {
+	image_xscale = 1;
+} 
 	
-	
-	if(key_jump){
-		state = "jump";
-
-	}
-	
-	if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
-	
-	firingDelay = 30;
-
-	with (instance_create_layer(x,y, "Bullets", oBullet)){
-		speed = 10;
-
-		if (other.image_xscale >= 1) {
-			direction = 1;
+switch (state) 
+{
+	case "move":
+		#region moving
 		
-		} else {
-			direction = -180;
+		hspWalk = 8;
+		sprite_index = sPlayer;
+	
+	
+		if(key_jump){
+			if (jumps > 0) && (key_jump){
+				image_index = 0;
+				sprite_index = Slime_Jump_Test;
+				audio_play_sound(Sn_Jump, 3, false);
 			
-			}
+				vsp = vspJump;
 
+				jumps--;
+			}
+			
+			state = "jump";
+		}
+	
+		if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
+	
+		firingDelay = 25;
+
+			with (instance_create_layer(x,y, "Bullets", oBullet)){
+		
+					speed = 10;
+
+					if (other.image_xscale >= 1) {
+						direction = 1;
+		
+					} else {
+						direction = -180;
+			
+					}
+
+			}
+		
+		}
+	
+
+		if(key_down) {
+			audio_play_sound(Sn_Stretch, 3, false);
+			image_index = 0;
+			state = "puddle";
+		}
+	
+		
+		if(key_dash) {
+			state = "dash";
+		}
+	
+		
+		if(key_melee) {
+			image_index = 0;
+			state = "melee";
 		}
 		
-	}
-	
-
-	
-	if(key_down) {
-		audio_play_sound(Sn_Stretch, 3, false);
-		image_index = 0;
-		state = "puddle";
-	}
-	
+		#endregion
 		
-	if(key_dash) {
-		state = "dash";
-	}
+	break;
+
+
+	case "jump":	
+		#region jumping
 	
+		if (jumps > 0) && (key_jump){
+			image_index = 0;
+			sprite_index = Slime_Jump_Test;
+			audio_play_sound(Sn_Jump, 3, false);
+			
+			vsp = vspJump;
+
+			jumps--;
+		} else if (key_dash) {
+			image_index = 0;
 		
-	if(key_melee) {
-		audio_play_sound(Sn_Punch, 3, false);
-		image_index = 0;
-		state = "melee";
-	}
+			state = "dash";
+	
+		} else if (key_melee)  {
+			image_index = 0;
+			audio_play_sound(Sn_Punch, 3, false);
+			state = "melee";
+		
+		} else if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
+	
+		firingDelay = 30;
 
+			with (instance_create_layer(x,y, "Bullets", oBullet)){
+		
+					speed = 10;
 
-}
-
-if (state == "jump") {
-
-	if (jumps > 0) && (key_jump){
-	image_index = 0;
-	sprite_index = Slime_Jump_Test;
-	audio_play_sound(Sn_Jump, 3, false);
+					if (other.image_xscale >= 1) {
+						direction = 1;
+		
+					} else {
+						direction = -180;
 			
-	vsp = vspJump;
+						}
 
-	jumps--;
-	}
-
-}
-
-if (state == "dash"){
-	if (canDash > 0) && (nextDashDuration <= 0) {
-
-		dashDuration = 25;
-		nextDashDuration = 70;
+			}
+		
+		}
 	
-		audio_play_sound(Sn_Dash, 3, false);
-		hsp = image_xscale * dashSpeed;
+	#endregion
 	
-		canDash--;
-
-	}
-
-	if (dashDuration > 0) {
-		sprite_index = sPlayerGlide;
-	
-		hsp = image_xscale * dashSpeed;
-		vsp = 0;
-	} else { 
-	
-		canDash = dashMax;
-		state = "move"
-	}
-	
-}
+	break;
 
 
-if (state == "melee"){
-	sprite_index = sPlayerMelee;
+	case "dash":
+		#region dashing
 	
-	ds_list_clear(hitByAttack);
+		if (canDash > 0) && (nextDashDuration <= 0) {
+
+			dashDuration = 25;
+			nextDashDuration = 70;
 	
-	mask_index = sPlayerMeleeHB;
-	var hitByAttackNow = ds_list_create();
-	var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
+			audio_play_sound(Sn_Dash, 3, false);
+			hsp = image_xscale * dashSpeed;
 	
-	if (hits > 0) {
-		for (var i = 0; i < hits; i++) {
+			canDash--;
+
+		}
+
+		if (dashDuration > 0) {
+			sprite_index = sPlayerGlide;
+	
+			hsp = image_xscale * dashSpeed;
+			vsp = 0;
+		} else { 
+	
+			canDash = dashMax;
+			state = "move"
+		}
+	
+	#endregion
+	
+	break;
+
+
+	case "melee":
+		#region attacking
+	
+		sprite_index = sPlayerMelee;
+	
+		ds_list_clear(hitByAttack);
+	
+		mask_index = sPlayerMeleeHB;
+		var hitByAttackNow = ds_list_create();
+		var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
+	
+		if (hits > 0) {
+			for (var i = 0; i < hits; i++) {
 			
-			var hitID = hitByAttackNow[| i]; //ds_list_find_value(hitByAttackNow, i);
+				var hitID = hitByAttackNow[| i]; //ds_list_find_value(hitByAttackNow, i);
 			
-			if (ds_list_find_index(hitByAttack, hitID) == -1) {
+				if (ds_list_find_index(hitByAttack, hitID) == -1) {
 				
-				ds_list_add(hitByAttack, hitID);
+					ds_list_add(hitByAttack, hitID);
 			
-				with (hitID) {
-					if (iFramesE <= 0) {
-						audio_play_sound(Sn_Slash, 5, false);
+					with (hitID) {
+						if (iFramesE <= 0) {
+							audio_play_sound(Sn_Slash, 5, false);
 						
-						iFramesE = 15;
-						hp--;
-						flash = 3;
+							iFramesE = 12;
+							hp--;
+							flash = 3;
+						}
 					}
 				}
-			}
 		
+			}
+	
 		}
 	
-	}
+		ds_list_destroy(hitByAttackNow);
+		mask_index = sPlayer;
 	
-	ds_list_destroy(hitByAttackNow);
-	mask_index = sPlayer;
-}
+	#endregion
+	
+	break;
 
 
-if (state == "puddle") {
+	case "puddle":
+		#region down
+	
+		sprite_index = sPlayerPuddle;
+		hspWalk = 4;
 
-	sprite_index = sPlayerPuddle;
-
-	if (image_index >= 12) && (key_down) {
-		image_speed = 0;
-	} else if (keyboard_check_released(vk_down)) {
+		if (image_index >= 12) && (key_down) && (puddleDuration > 0) {
+			puddleDuration--;
+			image_speed = 0;
 		
-		image_speed = 1;
-	
-	}
-	
+		} else {
 		
+			image_speed = 1;
+	
+		}
+	
+	#endregion
+	break;
+	
+	
 }
-
 /*
 if (key_glide) && (!place_meeting(x,y+1,oWall)) {
 
@@ -337,5 +339,62 @@ if (y >= room_height) || (hp <= 0) {
 
 #endregion
 
+
+
+#region text code abandoned
+ /*
+ if (canJump-- > 0) && (key_jump)
+{
+    vsp = vspJump;
+    canJump--;
+}
+
+//Are we on the ground?
+onGround = place_meeting(x,y+1,oWall);
+ 
+ 
+//Horizontal move & collide
+var _hCol = move_and_collide(hsp, 0, oWall, abs(hsp))
+
+if (_keyLeft) {
+	image_xscale = -1;
+
+} else if (_keyRight){
+	image_xscale = 1;
+}
+ 
+//Walk down slope
+if (onGround) && (place_meeting(x,y + abs(hsp) + 1 ,oWall)) && (vsp >= 0)
+{   
+    vsp += abs(hsp) + 1;
+}
+ 
+//Vertical move & collide
+var _vCol = move_and_collide(0, vsp, oWall, abs(vsp)+1 , hsp, vsp, hsp, vsp)
+
+if (array_length(_vCol)  > 0)
+{
+    if (vsp > 0) canJump = 22;
+    vsp = 0;
+}
+
+
+if (place_meeting(x,y, oWater)) {
+
+	sprite_index = sPlayerHurt;
+	
+
+}
+
+if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
+	
+	game_end();
+
+}
+
+*/
+
+
+#endregion
 
 

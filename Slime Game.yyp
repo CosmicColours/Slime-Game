@@ -68,7 +68,7 @@
     {"id":{"name":"sClouds_08","path":"sprites/sClouds_08/sClouds_08.yy",},},
     {"id":{"name":"sCollission","path":"sprites/sCollission/sCollission.yy",},},
     {"id":{"name":"sDungeonLight","path":"sprites/sDungeonLight/sDungeonLight.yy",},},
-    {"id":{"name":"sEnemyTest","path":"sprites/sEnemyTest/sEnemyTest.yy",},},
+    {"id":{"name":"sEnemySq","path":"sprites/sEnemySq/sEnemySq.yy",},},
     {"id":{"name":"sEnemyTestRun","path":"sprites/sEnemyTestRun/sEnemyTestRun.yy",},},
     {"id":{"name":"sFlower_01","path":"sprites/sFlower_01/sFlower_01.yy",},},
     {"id":{"name":"sFlower_02","path":"sprites/sFlower_02/sFlower_02.yy",},},

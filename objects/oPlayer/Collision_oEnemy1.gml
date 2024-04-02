@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (state != "dash") {
+if (state != "dash") and (state != "puddle"){
 	if (iFrames <= 0 ) {
 		
 		audio_play_sound(Sn_Slash, 5, false);
