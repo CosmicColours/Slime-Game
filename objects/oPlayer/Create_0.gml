@@ -21,11 +21,13 @@ dashMax = 1;
 dashSpeed = 20;
 dashDuration = 0;
 nextDashDuration = 0;
-puddleDuration = 50;
+
+knockback = -20;
+knockbackDuration = 0;
 
 firingDelay = 0;
 
-onGround = false; //are we on the ground?
+
 
 flash = 0;
 iFrames = 0;

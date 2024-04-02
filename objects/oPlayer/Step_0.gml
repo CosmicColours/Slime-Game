@@ -19,6 +19,7 @@ var key_range = keyboard_check_pressed(ord("E"));
 dashDuration = max(dashDuration - 1, 0);
 nextDashDuration = max(nextDashDuration - 1, 0);
 firingDelay = max(firingDelay - 1, 0);
+knockbackDuration = max(knockbackDuration - 1, 0);
 
 iFrames = max(iFrames - 1, 0);
 
@@ -30,7 +31,6 @@ hsp = (key_right - key_left) * hspWalk;
 vsp = vsp + grv;
 
 
-
 	#region key checks
 	
 if(key_left) && (!key_strafe) && (state != "dash") {
@@ -40,6 +40,7 @@ if(key_left) && (!key_strafe) && (state != "dash") {
 } else if(key_right) && (!key_strafe) && (state != "dash") {
 	image_xscale = 1;
 } 
+
 	
 switch (state) 
 {
@@ -207,7 +208,15 @@ switch (state)
 					with (hitID) {
 						if (iFramesE <= 0) {
 							audio_play_sound(Sn_Slash, 5, false);
-						
+							
+							if (oPlayer.x < x) {
+								knockback = -6;
+							} else {
+								knockback = 6;
+							}
+							
+							knockbackDuration = 4;
+							
 							iFramesE = 12;
 							hp--;
 							flash = 3;
@@ -233,8 +242,8 @@ switch (state)
 		sprite_index = sPlayerPuddle;
 		hspWalk = 4;
 
-		if (image_index >= 12) && (key_down) && (puddleDuration > 0) {
-			puddleDuration--;
+		if (image_index >= 12) && (key_down){
+
 			image_speed = 0;
 		
 		} else {
@@ -244,9 +253,27 @@ switch (state)
 		}
 	
 	#endregion
+		
 	break;
 	
+	case "knockback":
+		#region knockback
+
+			if (knockbackDuration > 0){
+					hsp -= knockback * 2;
+					y -= 25;
+				
+			} else {
+		
+				state = "move";
+			}
+		#endregion
+		
+	break;
 	
+	default:
+		show_debug_message("State error");
+		state = "move";
 }
 /*
 if (key_glide) && (!place_meeting(x,y+1,oWall)) {

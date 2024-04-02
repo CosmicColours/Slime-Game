@@ -5,6 +5,19 @@ vsp = vsp + grv;
 sprite_index = sEnemySq;
 
 iFramesE = max(iFramesE - 1, 0);
+knockbackDuration = max(knockbackDuration - 1, 0);
+
+
+if (knockbackDuration > 0){
+			
+	hsp -= knockback * 3;
+	y -= 15;
+				
+} else {
+
+	hsp = 0;
+}
+
 
 #region collission
 
@@ -42,7 +55,6 @@ if(place_meeting(x, y+vsp, oWall)) {
 
 
 #endregion
-
 
 x = x + hsp;
 

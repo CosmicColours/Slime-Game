@@ -9,10 +9,16 @@ if (state != "dash") and (state != "puddle"){
 		hp--;
 		flash = 3;
 
-		x -= 80;
-		y -= 40;
-	
-		iFrames = 15;
+		if (other.x >= x){
+			knockback = 20;
+		
+		} else {
+			knockback = -20;
+		}
+		knockbackDuration = 4;
+		state = "knockback";
+
+		iFrames = 30;
 	
 	}
 }
