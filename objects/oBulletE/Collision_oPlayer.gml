@@ -25,8 +25,5 @@ with (other) {
 
 }
 
-speed = speed / 3;
-image_index = 0;
-sprite_index = Slime_Bullet_Impact;
-state = "collide"
+instance_destroy();
 

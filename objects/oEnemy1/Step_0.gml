@@ -15,7 +15,7 @@ switch (state)
 	case "moving":
 	#region in sight
 
-	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 600) {
+	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 500) {
 			if (instance_exists(oPlayer)) {
 				if (oPlayer.x > x) {
 
@@ -51,6 +51,13 @@ switch (state)
 			
 				with (instance_create_layer(x,y, "Bullets", oBulletE)){
 		
+						Speed = 20;
+						Gravity = 0.75;
+						Resistance = 0.1;
+						Direction = point_direction( x, y, oPlayer.x, oPlayer.y);
+						HSpeed = dcos( -Direction) * Speed;
+						VSpeed = dsin( -Direction) * Speed;
+						/*
 						speed = 5;
 
 						if (oPlayer.x > x) {
@@ -60,6 +67,7 @@ switch (state)
 							direction = -180;
 			
 						}
+						*/
 
 				}
 		
