@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"sSkullDark_01",
   "bboxMode":0,
-  "bbox_bottom":202,
+  "bbox_bottom":49,
   "bbox_left":0,
-  "bbox_right":219,
+  "bbox_right":53,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"32824400-43f5-41c8-8073-cc7dd4d82c8d","name":"32824400-43f5-41c8-8073-cc7dd4d82c8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"adc01d3d-f136-4b96-a0d2-6e393b7e9aa0","name":"adc01d3d-f136-4b96-a0d2-6e393b7e9aa0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":203,
+  "height":50,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"9728fea9-5bd2-41cc-a216-5e1f5c276a64","blendMode":0,"displayName":"default","isLocked":false,"name":"9728fea9-5bd2-41cc-a216-5e1f5c276a64","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f06d2c58-04be-430a-a5b2-685ccad59004","blendMode":0,"displayName":"default","isLocked":false,"name":"f06d2c58-04be-430a-a5b2-685ccad59004","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sSkullDark_01",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"32824400-43f5-41c8-8073-cc7dd4d82c8d","path":"sprites/sSkullDark_01/sSkullDark_01.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ef04bff0-ef45-4e0e-867d-a42a39d78415","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"adc01d3d-f136-4b96-a0d2-6e393b7e9aa0","path":"sprites/sSkullDark_01/sSkullDark_01.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f973c3f3-726c-4507-97d6-cbcc08423cad","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":220,
+  "width":54,
 }

@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"sInstruction_DoubleJump",
   "bboxMode":0,
-  "bbox_bottom":109,
+  "bbox_bottom":108,
   "bbox_left":0,
-  "bbox_right":570,
+  "bbox_right":527,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b3922037-9865-4d1f-a939-671ff765e17f","name":"b3922037-9865-4d1f-a939-671ff765e17f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"38123485-d77b-4380-8885-98a86f9fc9f6","name":"38123485-d77b-4380-8885-98a86f9fc9f6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":110,
+  "height":128,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"84e6c56d-08b7-41e0-8239-41f40fcdb032","blendMode":0,"displayName":"default","isLocked":false,"name":"84e6c56d-08b7-41e0-8239-41f40fcdb032","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"89aff580-0ab9-4cdc-89d2-0e03ef586d51","blendMode":0,"displayName":"default","isLocked":false,"name":"89aff580-0ab9-4cdc-89d2-0e03ef586d51","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sInstruction_DoubleJump",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b3922037-9865-4d1f-a939-671ff765e17f","path":"sprites/sInstruction_DoubleJump/sInstruction_DoubleJump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"73debdda-f856-4646-aa47-8d8d5bd7a91d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"38123485-d77b-4380-8885-98a86f9fc9f6","path":"sprites/sInstruction_DoubleJump/sInstruction_DoubleJump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"74d617b2-9472-454b-880d-bda706f7e4e1","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":571,
+  "width":528,
 }

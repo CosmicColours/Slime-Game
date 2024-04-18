@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"sSkull_01",
   "bboxMode":0,
-  "bbox_bottom":202,
+  "bbox_bottom":49,
   "bbox_left":0,
-  "bbox_right":219,
+  "bbox_right":53,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5eccc448-4dcb-444d-b9ee-c9409b3d8c16","name":"5eccc448-4dcb-444d-b9ee-c9409b3d8c16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5087de13-43b6-4ca2-8794-4747927b9710","name":"5087de13-43b6-4ca2-8794-4747927b9710","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":203,
+  "height":50,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"1f557c14-221c-4a7a-8172-9dbfc577cb23","blendMode":0,"displayName":"default","isLocked":false,"name":"1f557c14-221c-4a7a-8172-9dbfc577cb23","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"bb275e1a-bfed-45ef-8545-9aad30b2230e","blendMode":0,"displayName":"default","isLocked":false,"name":"bb275e1a-bfed-45ef-8545-9aad30b2230e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sSkull_01",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5eccc448-4dcb-444d-b9ee-c9409b3d8c16","path":"sprites/sSkull_01/sSkull_01.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8ec61222-710a-4791-8016-c314d4dd8742","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5087de13-43b6-4ca2-8794-4747927b9710","path":"sprites/sSkull_01/sSkull_01.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"58e40137-3570-4a5c-ad8f-5a243f136217","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":220,
+  "width":54,
 }
