@@ -42,6 +42,7 @@
   },
   "name":"Slime Game",
   "resources":[
+    {"id":{"name":"oLevelEnd","path":"objects/oLevelEnd/oLevelEnd.yy",},},
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},},
     {"id":{"name":"oBulletE","path":"objects/oBulletE/oBulletE.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
@@ -55,6 +56,7 @@
     {"id":{"name":"Level_4_FinalBoss","path":"rooms/Level_4_FinalBoss/Level_4_FinalBoss.yy",},},
     {"id":{"name":"Level2","path":"rooms/Level2/Level2.yy",},},
     {"id":{"name":"Level3","path":"rooms/Level3/Level3.yy",},},
+    {"id":{"name":"SlideTransition","path":"scripts/SlideTransition/SlideTransition.yy",},},
     {"id":{"name":"shWhite","path":"shaders/shWhite/shWhite.yy",},},
     {"id":{"name":"Sn_Dash","path":"sounds/Sn_Dash/Sn_Dash.yy",},},
     {"id":{"name":"Sn_Death_Fail","path":"sounds/Sn_Death_Fail/Sn_Death_Fail.yy",},},
@@ -135,6 +137,7 @@
     {"id":{"name":"sTree_02","path":"sprites/sTree_02/sTree_02.yy",},},
     {"id":{"name":"sTreeDark_01","path":"sprites/sTreeDark_01/sTreeDark_01.yy",},},
     {"id":{"name":"sTreeDark_02","path":"sprites/sTreeDark_02/sTreeDark_02.yy",},},
+    {"id":{"name":"sTrigger","path":"sprites/sTrigger/sTrigger.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
     {"id":{"name":"sWater_01","path":"sprites/sWater_01/sWater_01.yy",},},
     {"id":{"name":"sWater","path":"sprites/sWater/sWater.yy",},},

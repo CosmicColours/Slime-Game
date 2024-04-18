@@ -2,6 +2,7 @@
 // You can write your code in this editor
 state = "move";
 hitByAttack = ds_list_create();
+hasControl = true;
 
 grvOG = 0.6;
 grv = 0.6; //gravity
