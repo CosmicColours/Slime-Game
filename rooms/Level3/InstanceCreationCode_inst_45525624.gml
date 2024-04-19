@@ -1,5 +1,5 @@
 targetRoom = Level_4_FinalBoss;
 
-targetX = 150;
+targetX = 200;
 
 targetY = 900;

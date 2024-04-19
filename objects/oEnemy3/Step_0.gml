@@ -8,6 +8,8 @@ knockbackDuration = max(knockbackDuration - 1, 0);
 
 	if (knockbackDuration > 0){
 		state = "knockback";
+		audio_stop_sound(Skeleton_BoneNoises);		
+
 	}
 	else if (point_distance(oPlayer.x, oPlayer.y, x, y) < 300) {
 		image_speed = 1;
@@ -15,9 +17,11 @@ knockbackDuration = max(knockbackDuration - 1, 0);
 		
 	} else if (point_distance(oPlayer.x, oPlayer.y, x, y) < 1200) {
 		image_speed = 0.8;
+		audio_stop_sound(Skeleton_BoneNoises);
 		state = "range";
 	} else {
 		hsp = 0;
+		audio_stop_sound(Skeleton_BoneNoises);
 		sprite_index = SkeletonMagicIdle;
 	}
 
@@ -31,6 +35,12 @@ switch (state)
 		sprite_index = SkeletonMagicWalk;
 		
 		if (instance_exists(oPlayer)) {
+			
+			if(audio_is_playing(Skeleton_BoneNoises) == false) {
+		
+				audio_play_sound(Skeleton_BoneNoises, 10, false);
+
+			}
 
 				 if (oPlayer.x >= x) {
 
@@ -58,6 +68,7 @@ switch (state)
 	
 	
 	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 1200) {
+		
 			if (instance_exists(oPlayer)) {
 				
 				if (oPlayer.x > x) {
@@ -78,6 +89,8 @@ switch (state)
 				sprite_index = SkeletonMagicAttack;
 			
 				with (instance_create_layer(x,y, "Bullets", oBulletEM)){
+					
+					audio_play_sound(choose(Mage_SpellShooting_01, Mage_SpellShooting_02), 7, false);
 		
 					speed = 15;
 

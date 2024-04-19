@@ -25,6 +25,7 @@ knockbackDuration = max(knockbackDuration - 1, 0);
 iFrames = max(iFrames - 1, 0);
 
 manaRecover = min(manaRecover + 1,	150);
+hpRecover = min(hpRecover + 1,	300);
 
 if (manaRecover >= 150) {
 
@@ -34,6 +35,22 @@ if (manaRecover >= 150) {
 	
 	manaRecover = 0;
 	
+	}
+
+}
+
+if (hpRecover >= 300) {
+
+	if (hp < 20){
+	hp++;
+	hpRecover = 0;
+	}
+
+} else if (state == "puddle") && (hpRecover >= 150) {
+
+	if (hp < 20){
+		hp++;
+		hpRecover = 0;
 	}
 
 }
@@ -211,42 +228,44 @@ switch (state)
 	
 		mask_index = sPlayerMeleeHB;
 		var hitByAttackNow = ds_list_create();
-		var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
-		hits = instance_place_list(x, y, oEnemy2, hitByAttackNow, false);
-		hits = instance_place_list(x, y, oEnemy3, hitByAttackNow, false);
-		hits = instance_place_list(x, y, oBoss, hitByAttackNow, false);
-	
-		if (hits > 0) {
-			for (var i = 0; i < hits; i++) {
+		//var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
+
+		for (j = 0; j < 4; j++) {
+
+		var hits = instance_place_list(x, y, enemies[j], hitByAttackNow, false);
+
+			if (hits > 0) {
+				for (var i = 0; i < hits; i++) {
 			
-				var hitID = hitByAttackNow[| i]; //ds_list_find_value(hitByAttackNow, i);
+					var hitID = hitByAttackNow[| i]; //ds_list_find_value(hitByAttackNow, i);
 			
-				if (ds_list_find_index(hitByAttack, hitID) == -1) {
+					if (ds_list_find_index(hitByAttack, hitID) == -1) {
 				
-					ds_list_add(hitByAttack, hitID);
+						ds_list_add(hitByAttack, hitID);
 			
-					with (hitID) {
-						if (iFramesE <= 0) {
-							audio_play_sound(Sn_Slash, 5, false);
+						with (hitID) {
+							if (iFramesE <= 0) {
+								audio_play_sound(Sn_Slash, 5, false);
 							
-							if (oPlayer.x < x) {
-								knockback = -10;
-							} else {
-								knockback = 10;
+								if (oPlayer.x < x) {
+									knockback = -10;
+								} else {
+									knockback = 10;
+								}
+							
+								knockbackDuration = 4;
+								state = "knockback";
+							
+								iFramesE = 12;
+								hp -= 4;
+								flash = 3;
 							}
-							
-							knockbackDuration = 4;
-							state = "knockback";
-							
-							iFramesE = 12;
-							hp -= 4;
-							flash = 3;
 						}
 					}
-				}
 		
-			}
+				}
 	
+			}
 		}
 	
 		ds_list_destroy(hitByAttackNow);
@@ -331,7 +350,7 @@ if (place_meeting(x,y, oWater)) {
 
 	//sprite_index = sPlayerHurt;
 	
-	health--;
+	hp--;
 	
 
 }

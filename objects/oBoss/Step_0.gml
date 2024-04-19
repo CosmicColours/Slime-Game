@@ -20,7 +20,15 @@ switch (state)
 	#region in sight
 	
 	if (distanceToUs <= 900) && (distanceToUs > 300) {
-		sprite_index = BossWalk;
+		sprite_index = BossWalk;	
+		
+
+
+	if(audio_is_playing(FinalBoss) == false) {
+		
+		audio_play_sound(FinalBoss, 10, true);
+
+	}
 		
 		if (instance_exists(oPlayer)) {
 
@@ -40,6 +48,7 @@ switch (state)
 	}
 		else if (distanceToUs > 900) {
 
+			audio_stop_sound(FinalBoss);
 			image_speed = 1;
 			sprite_index = BossIdle;
 			state = "range";
@@ -47,7 +56,8 @@ switch (state)
 			
 		} 
 		else if (distanceToUs <= 300) {
-		
+
+			audio_stop_sound(FinalBoss);
 			image_speed = 0.7;
 			image_index = 0;
 			
@@ -55,6 +65,7 @@ switch (state)
 			state = "attack";
 	} 
 		else {
+		audio_stop_sound(FinalBoss);
 		hsp = 0;
 		sprite_index = BossIdle;
 	}
@@ -85,13 +96,16 @@ switch (state)
 				}
 			
 			countdown--;
+
 		
 			if (countdown <= 0) {
 				image_index = 0;
 				sprite_index = BossRange;
 				
 			
-				with (instance_create_layer(x,y, "Bullets", oBulletEB)){
+				with (instance_create_layer(x - 160, y - 50, "Bullets", oBulletEB)){
+					
+					audio_play_sound(FinalBoss_FireBallShot, 10, false);
 		
 					speed = random_range(15, 30);
 
@@ -99,7 +113,9 @@ switch (state)
 				}
 		
 				countdown = random_range(50, 150);
+				
 			}
+
 	
 		}
 	} 
@@ -145,8 +161,11 @@ switch (state)
 		image_speed = 0.7;
 
 		if (instance_place(x, y, oPlayer)) {
+			
+			
 			with (oPlayer) {
 				if (iFrames <= 0) {
+					audio_play_sound(FinalBoss_Roar, 10, false);
 					audio_play_sound(Sn_Slash, 5, false);
 							
 							if (other.x < x) {

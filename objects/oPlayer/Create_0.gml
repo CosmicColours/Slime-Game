@@ -3,6 +3,8 @@
 state = "move";
 hitByAttack = ds_list_create();
 
+enemies = [ oEnemy1, oEnemy2, oEnemy3, oBoss];
+
 grvOG = 0.6;
 grv = 0.6; //gravity
 hsp = 0; //current horizontal speed
@@ -28,6 +30,7 @@ knockbackDuration = 0;
 firingDelay = 0;
 
 manaRecover = 0;
+hpRecover = 0;
 
 
 flash = 0;

@@ -5,7 +5,7 @@ with (other) {
 	if (state != "dash"){
 		
 		if (iFrames <= 0){
-			audio_play_sound(Sn_Slash, 5, false);
+			audio_play_sound(FinalBoss_FireBallImpact, 5, false);
 			
 			if (other.x >= x){
 				knockback = 10;

@@ -20,6 +20,6 @@ knockbackDuration = 0;
 
 flash = 0;
 
-hp = 70;
+hp = 60;
 totalHP = hp * 12;
 

@@ -78,6 +78,8 @@ switch (state)
 				sprite_index = Squirrel_Ranged;
 			
 				with (instance_create_layer(x,y, "Bullets", oBulletE)){
+					
+						audio_play_sound(Mouse_Bite, 7, false);
 		
 						Speed = 20;
 						Gravity = 0.75;
