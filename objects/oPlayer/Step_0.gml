@@ -197,6 +197,7 @@ switch (state)
 		mask_index = sPlayerMeleeHB;
 		var hitByAttackNow = ds_list_create();
 		var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
+		hits = instance_place_list(x, y, oEnemy2, hitByAttackNow, false);
 	
 		if (hits > 0) {
 			for (var i = 0; i < hits; i++) {
@@ -311,7 +312,7 @@ if(place_meeting(x,y+1,oWall)) || (place_meeting(x,y+1,oWater)){
 
 if (place_meeting(x,y, oWater)) {
 
-	sprite_index = sPlayerHurt;
+	//sprite_index = sPlayerHurt;
 	
 	health--;
 	
