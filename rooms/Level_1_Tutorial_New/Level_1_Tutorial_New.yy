@@ -29,6 +29,7 @@
     {"name":"inst_4AE39DEB","path":"rooms/Level_1_Tutorial_New/Level_1_Tutorial_New.yy",},
     {"name":"inst_3CEBF6A8","path":"rooms/Level_1_Tutorial_New/Level_1_Tutorial_New.yy",},
     {"name":"inst_28DA4DB","path":"rooms/Level_1_Tutorial_New/Level_1_Tutorial_New.yy",},
+    {"name":"inst_442A7190","path":"rooms/Level_1_Tutorial_New/Level_1_Tutorial_New.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -59,6 +60,7 @@
         {"$GMRInstance":"","%Name":"inst_5E4F0F36","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E4F0F36","objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":1248.0,},
         {"$GMRInstance":"","%Name":"inst_47E174FB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_47E174FB","objectId":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":768.0,},
         {"$GMRInstance":"","%Name":"inst_28DA4DB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_28DA4DB","objectId":{"name":"oLevel1Music","path":"objects/oLevel1Music/oLevel1Music.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":3.0,"x":15520.0,"y":768.0,},
+        {"$GMRInstance":"","%Name":"inst_442A7190","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_442A7190","objectId":{"name":"oEnemy3","path":"objects/oEnemy3/oEnemy3.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1408.0,"y":928.0,},
       ],"layers":[],"name":"Slime","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Environment","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_3C054B4F","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_3C054B4F","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"sFlower_01","path":"sprites/sFlower_01/sFlower_01.yy",},"x":186.0,"y":1319.0,},

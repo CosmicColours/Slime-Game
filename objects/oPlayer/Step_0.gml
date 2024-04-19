@@ -198,6 +198,7 @@ switch (state)
 		var hitByAttackNow = ds_list_create();
 		var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
 		hits = instance_place_list(x, y, oEnemy2, hitByAttackNow, false);
+		hits = instance_place_list(x, y, oEnemy3, hitByAttackNow, false);
 	
 		if (hits > 0) {
 			for (var i = 0; i < hits; i++) {
@@ -222,7 +223,7 @@ switch (state)
 							state = "knockback";
 							
 							iFramesE = 12;
-							hp -= 2;
+							hp -= 4;
 							flash = 3;
 						}
 					}
