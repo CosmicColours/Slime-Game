@@ -18,7 +18,7 @@ switch (state)
 		state = "knockback";
 	}
 	
-	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 900) && (point_distance(oPlayer.x, oPlayer.y, x, y) > 500) {
+	if (point_distance(oPlayer.x, oPlayer.y, x, y) < 900) && (point_distance(oPlayer.x, oPlayer.y, x, y) > 400) {
 		sprite_index = sGoblinWalk;
 		
 		if (instance_exists(oPlayer)) {
@@ -37,7 +37,7 @@ switch (state)
 			
 		} 
 	}	
-	else if (point_distance(oPlayer.x, oPlayer.y, x, y) <= 500) {
+	else if (point_distance(oPlayer.x, oPlayer.y, x, y) <= 400) {
 			image_index = 0;
 
 			hsp = 0;
@@ -63,18 +63,16 @@ switch (state)
 						
 		if (oPlayer.x > x) {
 
-			hsp = 0;
 			image_xscale = -1;
 
 		} else {
 
-			hsp = 0;
 			image_xscale = 1;
 		}
 	
 	
 		mask_index = sGobAttackHB;
-		image_speed = 0.7;
+		image_speed = 0.65;
 
 		if (place_meeting(x, y, oPlayer)) {
 			with (oPlayer) {

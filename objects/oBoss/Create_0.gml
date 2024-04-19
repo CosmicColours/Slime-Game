@@ -15,10 +15,11 @@ countdown = random_range(100, 200);
 
 vspJump = -20; //jump speed
 
-knockback = 20;
+knockback = 10;
 knockbackDuration = 0;
 
 flash = 0;
 
 hp = 70;
+totalHP = hp * 12;
 

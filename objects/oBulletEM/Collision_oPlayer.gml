@@ -14,10 +14,10 @@ with (other) {
 				knockback = -10;
 			}
 			
-			knockbackDuration = 4;
+			knockbackDuration = 6;
 			state = "knockback";
 			
-		hp--;
+		hp -= 2;
 		iFrames = 50;
 		flash = 8;
 		

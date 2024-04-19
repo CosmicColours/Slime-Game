@@ -27,8 +27,7 @@ knockbackDuration = 0;
 
 firingDelay = 0;
 
-manaRecover = 20;
-
+manaRecover = 0;
 
 
 flash = 0;
@@ -37,3 +36,8 @@ iFrames = 0;
 
 hp = 20;
 mana = 6;
+
+totalHP = hp * 8;
+
+totalMana = mana * 12;
+

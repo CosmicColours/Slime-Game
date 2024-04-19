@@ -92,6 +92,7 @@
     {"id":{"name":"Acorn_Spinning_","path":"sprites/Acorn_Spinning_/Acorn_Spinning_.yy",},},
     {"id":{"name":"BossIdle","path":"sprites/BossIdle/BossIdle.yy",},},
     {"id":{"name":"BossMelee","path":"sprites/BossMelee/BossMelee.yy",},},
+    {"id":{"name":"BossMeleeHB","path":"sprites/BossMeleeHB/BossMeleeHB.yy",},},
     {"id":{"name":"BossRange","path":"sprites/BossRange/BossRange.yy",},},
     {"id":{"name":"BossRangedAttack","path":"sprites/BossRangedAttack/BossRangedAttack.yy",},},
     {"id":{"name":"BossRangedImpact","path":"sprites/BossRangedImpact/BossRangedImpact.yy",},},

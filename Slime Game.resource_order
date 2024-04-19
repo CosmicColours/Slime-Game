@@ -68,6 +68,7 @@
     {"name":"Acorn_Spinning_","order":4,"path":"sprites/Acorn_Spinning_/Acorn_Spinning_.yy",},
     {"name":"BossIdle","order":3,"path":"sprites/BossIdle/BossIdle.yy",},
     {"name":"BossMelee","order":1,"path":"sprites/BossMelee/BossMelee.yy",},
+    {"name":"BossMeleeHB","order":6,"path":"sprites/BossMeleeHB/BossMeleeHB.yy",},
     {"name":"BossRangedAttack","order":5,"path":"sprites/BossRangedAttack/BossRangedAttack.yy",},
     {"name":"BossRangedImpact","order":4,"path":"sprites/BossRangedImpact/BossRangedImpact.yy",},
     {"name":"BossWalk","order":2,"path":"sprites/BossWalk/BossWalk.yy",},

@@ -24,15 +24,15 @@ knockbackDuration = max(knockbackDuration - 1, 0);
 
 iFrames = max(iFrames - 1, 0);
 
-manaRecover = max(manaRecover - 1, 0);
+manaRecover = min(manaRecover + 1,	150);
 
-if (manaRecover <= 0) {
+if (manaRecover >= 150) {
 
 	if (mana < 6) {
 		
 	mana++;
 	
-	manaRecover = 150;
+	manaRecover = 0;
 	
 	}
 
