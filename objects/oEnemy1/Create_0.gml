@@ -20,5 +20,5 @@ knockbackDuration = 0;
 
 flash = 0;
 
-hp = 8;
+hp = 5;
 

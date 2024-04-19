@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (hasControl) {
-
 var key_right = keyboard_check(vk_right);
 var key_left = keyboard_check(vk_left);
 var key_down = keyboard_check(vk_down);
@@ -50,7 +48,7 @@ switch (state)
 	case "move":
 		#region moving
 		
-		hspWalk = 8;
+		hspWalk = 10;
 		sprite_index = sPlayer;
 	
 	
@@ -428,8 +426,3 @@ if (x >= room_width) || (x <= 0) || (y >= room_height) || (health <= 0) {
 
 
 #endregion
-
-} else {
-	
-	
-}

@@ -2,13 +2,12 @@
 // You can write your code in this editor
 state = "move";
 hitByAttack = ds_list_create();
-hasControl = true;
 
 grvOG = 0.6;
 grv = 0.6; //gravity
 hsp = 0; //current horizontal speed
 vsp = 0; //current vertical speed
-hspWalk = 8; //walk speed
+hspWalk = 10; //walk speed
 vspJump = -20; //jump speed
 
 
