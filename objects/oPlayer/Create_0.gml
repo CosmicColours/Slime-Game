@@ -27,11 +27,13 @@ knockbackDuration = 0;
 
 firingDelay = 0;
 
+manaRecover = 20;
+
 
 
 flash = 0;
 iFrames = 0;
 
 
-hp = 10;
-mana = 10;
+hp = 20;
+mana = 6;

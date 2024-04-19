@@ -24,6 +24,20 @@ knockbackDuration = max(knockbackDuration - 1, 0);
 
 iFrames = max(iFrames - 1, 0);
 
+manaRecover = max(manaRecover - 1, 0);
+
+if (manaRecover <= 0) {
+
+	if (mana < 6) {
+		
+	mana++;
+	
+	manaRecover = 150;
+	
+	}
+
+}
+
  
 //Work out where to move horizontally
 hsp = (key_right - key_left) * hspWalk;
@@ -66,9 +80,10 @@ switch (state)
 			state = "jump";
 		}
 	
-		if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) {
+		if (key_range) && (firingDelay <= 0) && (dashDuration <= 0) && (mana > 0) {
 	
 		firingDelay = 25;
+		mana--;
 
 			with (instance_create_layer(x,y, "Bullets", oBullet)){
 		
@@ -199,6 +214,7 @@ switch (state)
 		var hits = instance_place_list(x, y, oEnemy1, hitByAttackNow, false);
 		hits = instance_place_list(x, y, oEnemy2, hitByAttackNow, false);
 		hits = instance_place_list(x, y, oEnemy3, hitByAttackNow, false);
+		hits = instance_place_list(x, y, oBoss, hitByAttackNow, false);
 	
 		if (hits > 0) {
 			for (var i = 0; i < hits; i++) {
